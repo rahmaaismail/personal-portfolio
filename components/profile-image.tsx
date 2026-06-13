@@ -5,6 +5,11 @@ import { Pause, Play, Volume2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
+const MUSIC_CONFIG = {
+  songName: "Jazz Vibes",
+  artist: "Atlas Audio",
+};
+
 interface ProfileImageProps {
   soundEnabled: boolean;
   onToggleSound: () => void;
@@ -12,8 +17,7 @@ interface ProfileImageProps {
 
 export default function ProfileImage({ soundEnabled, onToggleSound }: ProfileImageProps) {
   const [imageError, setImageError] = useState(false);
-  const [coverSrc, setCoverSrc] = useState("/audio/resistance-cover.jpg");
-  const [coverError, setCoverError] = useState(false);
+  const [coverError] = useState(true);
 
   return (
     <motion.div
@@ -45,7 +49,7 @@ export default function ProfileImage({ soundEnabled, onToggleSound }: ProfileIma
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
-              <span className="text-2xl font-bold text-primary">DS</span>
+              <span className="text-2xl font-bold text-primary">RI</span>
             </div>
           )}
         </div>
@@ -63,21 +67,20 @@ export default function ProfileImage({ soundEnabled, onToggleSound }: ProfileIma
         whileTap={{ scale: 0.97 }}
         onClick={onToggleSound}
         className="group flex items-center gap-3 rounded-2xl border border-primary/30 bg-background/80 p-2 pr-3 shadow-lg shadow-primary/10 backdrop-blur-md transition-colors hover:border-primary/60 hover:bg-primary/10"
-        aria-label={soundEnabled ? "Pause Resistance by Drake" : "Play Resistance by Drake"}
+        aria-label={soundEnabled ? `Pause ${MUSIC_CONFIG.songName}` : `Play ${MUSIC_CONFIG.songName}`}
       >
         <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-primary/25 bg-primary/10">
           {!coverError ? (
             <Image
               src={coverSrc}
-              alt="Resistance album cover"
+              alt={`${MUSIC_CONFIG.songName} cover`}
               fill
               className="object-cover"
               onError={() => {
                 if (coverSrc.endsWith(".jpg")) {
-                  setCoverSrc("/audio/resistance-cover.png");
+                  setCoverSrc(MUSIC_CONFIG.coverFallback);
                   return;
                 }
-
                 setCoverError(true);
               }}
             />
@@ -90,10 +93,10 @@ export default function ProfileImage({ soundEnabled, onToggleSound }: ProfileIma
         <span className="min-w-0 text-left">
           <span className="flex items-center gap-1.5 text-[10px] font-medium uppercase text-primary">
             <Volume2 className="h-3 w-3" />
-            Music
+            Now Playing
           </span>
           <span className="block max-w-36 truncate text-xs font-semibold text-foreground">
-            Resistance - Drake
+            {MUSIC_CONFIG.songName} — {MUSIC_CONFIG.artist}
           </span>
         </span>
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-sm">

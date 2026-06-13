@@ -12,7 +12,6 @@ import EasterEgg from "@/components/easter-egg";
 import SoundPrompt from "@/components/sound-prompt";
 import ProfileImage from "@/components/profile-image";
 
-// Dynamically import Brain3D to avoid SSR issues with Three.js
 const Brain3D = dynamic(() => import("@/components/brain/brain-3d"), {
   ssr: false,
   loading: () => <BrainLoading />,
@@ -37,17 +36,14 @@ export default function Portfolio() {
   const [isReducedMotion, setIsReducedMotion] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Check for reduced motion preference
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setIsReducedMotion(mediaQuery.matches);
-
     const handler = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
     mediaQuery.addEventListener("change", handler);
     return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
-  // Show sound prompt after intro
   useEffect(() => {
     if (!showIntro) {
       const timer = setTimeout(() => setShowSoundPrompt(true), 2000);
@@ -55,14 +51,12 @@ export default function Portfolio() {
     }
   }, [showIntro]);
 
-  // Handle audio
   useEffect(() => {
     if (typeof window !== "undefined") {
       audioRef.current = new Audio("/audio/background.mp3");
       audioRef.current.loop = true;
       audioRef.current.volume = 0.3;
     }
-
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -76,9 +70,7 @@ export default function Portfolio() {
       if (soundEnabled) {
         audioRef.current.pause();
       } else {
-        audioRef.current.play().catch(() => {
-          // Audio play failed, likely due to browser autoplay policy
-        });
+        audioRef.current.play().catch(() => {});
       }
       setSoundEnabled(!soundEnabled);
       setShowSoundPrompt(false);
@@ -98,13 +90,10 @@ export default function Portfolio() {
   }, []);
 
   const handleExplore = useCallback(() => {
-    // Scroll to brain or trigger first region
     setActiveRegion("frontal");
   }, []);
 
-  const handleEasterEgg = useCallback(() => {
-    // Could trigger a special brain pulse animation
-  }, []);
+  const handleEasterEgg = useCallback(() => {}, []);
 
   return (
     <main className="relative min-h-screen bg-background overflow-hidden">
@@ -121,9 +110,11 @@ export default function Portfolio() {
       {/* Easter egg handler */}
       <EasterEgg onTrigger={handleEasterEgg} />
 
-      {/* Profile image */}
+      {/* Profile image — hidden on mobile to avoid overlap */}
       {!showIntro && (
-        <ProfileImage soundEnabled={soundEnabled} onToggleSound={toggleSound} />
+        <div className="hidden md:block">
+          <ProfileImage soundEnabled={soundEnabled} onToggleSound={toggleSound} />
+        </div>
       )}
 
       {/* Navigation */}
@@ -138,10 +129,12 @@ export default function Portfolio() {
       <div className="relative z-10 min-h-screen flex flex-col lg:flex-row">
         {/* Brain visualization */}
         <div
-          className={`flex-1 relative transition-all duration-500 ${
-            activeRegion ? "lg:w-1/2" : "w-full"
+          className={`relative transition-all duration-500 ${
+            activeRegion
+              ? "h-[40vh] lg:h-auto lg:w-1/2 flex-shrink-0"
+              : "flex-1 w-full"
           }`}
-          style={{ minHeight: "60vh" }}
+          style={{ minHeight: activeRegion ? "40vh" : "60vh" }}
         >
           <Suspense fallback={<BrainLoading />}>
             <Brain3D
@@ -153,15 +146,11 @@ export default function Portfolio() {
         </div>
 
         {/* Section panel */}
-        <div
-          className={`relative transition-all duration-500 ${
-            activeRegion
-              ? "lg:w-1/2 p-4 lg:p-8 flex items-center justify-center"
-              : "w-0 overflow-hidden"
-          }`}
-        >
-          <SectionPanel activeRegion={activeRegion} onClose={() => setActiveRegion(null)} />
-        </div>
+        {activeRegion && (
+          <div className="relative flex-1 p-4 lg:p-8 flex items-start lg:items-center justify-center overflow-y-auto pb-20">
+            <SectionPanel activeRegion={activeRegion} onClose={() => setActiveRegion(null)} />
+          </div>
+        )}
       </div>
 
       {/* Hero section */}
@@ -173,19 +162,6 @@ export default function Portfolio() {
         onEnable={handleEnableSound}
         onDismiss={() => setShowSoundPrompt(false)}
       />
-
-      {/* Accessibility skip link */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg"
-      >
-        Skip to main content
-      </a>
-
-      {/* Hidden main content marker for accessibility */}
-      <div id="main-content" className="sr-only">
-        Main portfolio content
-      </div>
     </main>
   );
 }

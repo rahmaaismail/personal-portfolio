@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rahma Ismail| Software Engineer",
+  title: "Rahma Ismail | Software Engineer",
   description:
     "Portfolio of Rahma Ismail - Software Engineering Student at University of Victoria. I am interested in AI and embedded systems.",
   keywords: [

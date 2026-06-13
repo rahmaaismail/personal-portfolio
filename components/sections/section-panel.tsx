@@ -43,7 +43,7 @@ export default function SectionPanel({ activeRegion, onClose }: SectionPanelProp
         return <OrganizationsSection />;
       case "brainstem":
         return <ContactSection />;
-        case "education":
+        case "hippocampus":
           return <EducationSection />;
       default:
         return null;

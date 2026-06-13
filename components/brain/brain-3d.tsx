@@ -14,7 +14,7 @@ const regionColors: Record<BrainRegion, string> = {
   occipital:  "#818cf8", // indigo
   cerebellum: "#f0abfc", // light pink-purple
   brainstem:  "#7c3aed", // deep violet
-  education:  "#a5b4fc", // periwinkle
+  hippocampus: "#a5b4fc", // periwinkle
   
 };
 
@@ -217,7 +217,7 @@ const regionPositions: Record<BrainRegion, [number, number, number]> = {
   occipital:  [0, 0, -0.9],
   cerebellum: [0, -0.7, -0.5],
   brainstem:  [0, -1, 0],
-  hippocampus:  [0.9, 0, 0],
+  hippocampus:[0.9, 0, 0],
 };
 
 function BrainMesh({

@@ -1,7 +1,28 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { MapPin, Calendar } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MapPin, Calendar, ChevronDown } from "lucide-react";
+import { useState } from "react";
+
+const courses = [
+  { code: "CSC 225", name: "Algorithms and Data Structures I" },
+  { code: "CSC 226", name: "Algorithms and Data Structures II" },
+  { code: "CSC 320", name: "Foundations of Computer Science" },
+  { code: "CSC 360", name: "Operating Systems" },
+  { code: "CSC 370", name: "Database Systems" },
+  { code: "CSC 115", name: "Fundamentals of Programming II" },
+  { code: "SENG 265", name: "Software Development Methods" },
+  { code: "SENG 275", name: "Software Testing" },
+  { code: "SENG 310", name: "Human Computer Interaction" },
+  { code: "ECE 255", name: "Introduction to Computer Architecture" },
+  { code: "ECE 260", name: "Continuous-Time Signals and Systems" },
+  { code: "ECE 310", name: "Digital Signal Processing I" },
+  { code: "ECE 360", name: "Control Theory and Systems I" },
+  { code: "ECE 363", name: "Communication Networks" },
+  { code: "STAT 260", name: "Introduction to Probability and Statistics" },
+  { code: "MATH 122", name: "Logic and Foundations" },
+  { code: "ENGR 130", name: "Introduction to Professional Practice" },
+];
 
 const educationData = [
   {
@@ -12,6 +33,7 @@ const educationData = [
     period: "Sep 2022 – Present",
     location: "Victoria, BC",
     details: "Co-op program. Courses range from algorithms, operating systems, database systems, software development, HCI, communication networks, and electrical engineering.",
+    showCourses: true,
   },
   {
     id: "aise",
@@ -45,7 +67,7 @@ const educationData = [
     id: "bisoh",
     institution: "British International School of Houston",
     degree: "British Curriculum",
-    level: "Kindergarten & Elementary School",
+    level: "Kindergarten",
     period: "Feb 2008 – Jun 2010",
     location: "Houston, TX",
     details: "British-style education with strong extracurricular programs and small class sizes.",
@@ -53,6 +75,8 @@ const educationData = [
 ];
 
 export default function EducationSection() {
+  const [coursesOpen, setCoursesOpen] = useState(false);
+
   return (
     <div className="space-y-4">
       {educationData.map((edu, index) => (
@@ -85,6 +109,45 @@ export default function EducationSection() {
           <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{edu.details}</p>
           {edu.activities && (
             <p className="text-xs text-muted-foreground/70 mt-1 italic">{edu.activities}</p>
+          )}
+
+          {/* Courses collapsible — UVic only */}
+          {edu.showCourses && (
+            <div className="mt-3">
+              <button
+                onClick={() => setCoursesOpen(!coursesOpen)}
+                className="flex items-center gap-1.5 text-xs text-primary/70 hover:text-primary transition-colors"
+              >
+                <ChevronDown
+                  className={`w-3 h-3 transition-transform duration-200 ${coursesOpen ? "rotate-180" : ""}`}
+                />
+                {coursesOpen ? "Hide" : "View"} Relevant Coursework
+              </button>
+
+              <AnimatePresence>
+                {coursesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="overflow-hidden"
+                  >
+                    <div className="mt-3 grid grid-cols-1 gap-1.5">
+                      {courses.map((course) => (
+                        <div
+                          key={course.code}
+                          className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-primary/5 border border-primary/10"
+                        >
+                          <span className="text-[10px] font-mono text-primary shrink-0">{course.code}</span>
+                          <span className="text-xs text-muted-foreground">{course.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           )}
         </motion.div>
       ))}

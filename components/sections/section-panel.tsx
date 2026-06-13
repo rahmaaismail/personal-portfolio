@@ -11,6 +11,7 @@ import OrganizationsSection from "./organizations-section";
 import ContactSection from "./contact-section";
 import ConferencesSection from "./conferences-section";
 import CertificationsSection from "./certifications-section";
+import EducationSection from "./education-section";
 
 interface SectionPanelProps {
   activeRegion: BrainRegion | null;
@@ -42,6 +43,8 @@ export default function SectionPanel({ activeRegion, onClose }: SectionPanelProp
         return <OrganizationsSection />;
       case "brainstem":
         return <ContactSection />;
+        case "education":
+          return <EducationSection />;
       default:
         return null;
     }

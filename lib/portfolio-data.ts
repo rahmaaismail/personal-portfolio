@@ -388,6 +388,7 @@ export type BrainRegion =
   | "occipital"
   | "cerebellum"
   | "brainstem";
+  | "education";
 
 export const brainRegions: Record<BrainRegion, { label: string; section: string; description: string }> = {
   frontal: { label: "Frontal Cortex", section: "experience", description: "Professional Experience" },
@@ -396,4 +397,5 @@ export const brainRegions: Record<BrainRegion, { label: string; section: string;
   occipital: { label: "Occipital Lobe", section: "awards", description: "Awards, Conferences & Certifications" },
   cerebellum: { label: "Cerebellum", section: "organizations", description: "Organizations & Leadership" },
   brainstem: { label: "Brain Stem", section: "contact", description: "Contact & Social" },
+  education: { label: "Hippocampus", section: "education", description: "Education" },
 };

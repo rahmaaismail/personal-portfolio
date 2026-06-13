@@ -28,6 +28,7 @@ const educationData = [
   {
     id: "uvic",
     institution: "University of Victoria",
+    url: "https://www.uvic.ca/",
     degree: "Bachelor of Engineering — Software Engineering",
     level: "Post-Secondary",
     period: "Sep 2022 – Present",
@@ -38,6 +39,7 @@ const educationData = [
   {
     id: "aise",
     institution: "American International School in Egypt",
+    url: "https://www.aisegypt.com/",
     degree: "American High School Diploma · IB Diploma · Egyptian General Secondary Certificate",
     level: "Middle School & High School",
     period: "Sep 2014 – Jun 2022",
@@ -48,6 +50,7 @@ const educationData = [
   {
     id: "webber",
     institution: "Webber Academy",
+    url: "https://www.webberacademy.ca/",
     degree: "Canadian Curriculum",
     level: "Elementary School",
     period: "Jan 2012 – Jun 2014",
@@ -57,6 +60,7 @@ const educationData = [
   {
     id: "bsb",
     institution: "British School of Beijing, Shunyi",
+    url: "https://www.nordangliaeducation.com/bsb-shunyi",
     degree: "British Curriculum",
     level: "Elementary School",
     period: "Sep 2010 – Jan 2012",
@@ -66,8 +70,9 @@ const educationData = [
   {
     id: "bisoh",
     institution: "British International School of Houston",
+    url: "https://www.nordangliaeducation.com/bis-houston",
     degree: "British Curriculum",
-    level: "Kindergarten",
+    level: "Kindergarten & Elementary School",
     period: "Feb 2008 – Jun 2010",
     location: "Houston, TX",
     details: "British-style education with strong extracurricular programs and small class sizes.",
@@ -89,7 +94,9 @@ export default function EducationSection() {
         >
           <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
             <div className="flex-1">
-              <h4 className="font-semibold text-foreground text-sm">{edu.institution}</h4>
+              <h4 className="font-semibold text-foreground text-sm">
+                <a href={edu.url} target="_blank" rel="noopener noreferrer" className="hover:text-primary underline decoration-dotted underline-offset-2 transition-colors">{edu.institution}</a>
+              </h4>
               <p className="text-xs text-primary/80 mt-0.5">{edu.degree}</p>
               {edu.level && (
                 <p className="text-xs text-muted-foreground/70 mt-0.5 italic">{edu.level}</p>

@@ -21,6 +21,7 @@ const courses = [
   { code: "ECE 363", name: "Communication Networks" },
   { code: "STAT 260", name: "Introduction to Probability and Statistics" },
   { code: "MATH 122", name: "Logic and Foundations" },
+  { code: "MATH 211", name: "Matrix Algebra I"},
   { code: "ENGR 130", name: "Introduction to Professional Practice" },
 ];
 
@@ -32,7 +33,7 @@ const educationData = [
     degree: "Bachelor of Engineering — Software Engineering",
     level: "Post-Secondary",
     period: "Sep 2022 – Present",
-    location: "Victoria, BC",
+    location: "Victoria, BC, Canada",
     details: "Co-op program. Courses range from algorithms, operating systems, database systems, software development, HCI, communication networks, and electrical engineering.",
     showCourses: true,
   },
@@ -54,7 +55,7 @@ const educationData = [
     degree: "Canadian Curriculum",
     level: "Elementary School",
     period: "Jan 2012 – Jun 2014",
-    location: "Calgary, AB",
+    location: "Calgary, AB, Canada",
     details: "Rigorous private school education focused on academic excellence, critical thinking, and leadership.",
   },
   {
@@ -74,7 +75,7 @@ const educationData = [
     degree: "British Curriculum",
     level: "Kindergarten & Elementary School",
     period: "Feb 2008 – Jun 2010",
-    location: "Houston, TX",
+    location: "Houston, TX, United States",
     details: "British-style education with strong extracurricular programs and small class sizes.",
   },
 ];

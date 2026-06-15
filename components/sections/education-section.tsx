@@ -56,7 +56,7 @@ const educationData = [
     level: "Elementary School",
     period: "Jan 2012 – Jun 2014",
     location: "Calgary, AB, Canada",
-    details: "Rigorous private school education focused on academic excellence, critical thinking, and leadership.",
+    details: "Rigorous K–12 private school focused on academic excellence, critical thinking, and leadership.",
   },
   {
     id: "bsb",
@@ -66,7 +66,7 @@ const educationData = [
     level: "Elementary School",
     period: "Sep 2010 – Jan 2012",
     location: "Beijing, China",
-    details: "British-style curriculum combining academic rigor with creativity and global citizenship.",
+    details: "K–12 British-style curriculum combining academic rigor with creativity and global citizenship.",
   },
   {
     id: "bisoh",
@@ -76,7 +76,7 @@ const educationData = [
     level: "Kindergarten & Elementary School",
     period: "Feb 2008 – Jun 2010",
     location: "Houston, TX, United States",
-    details: "British-style education with strong extracurricular programs and small class sizes.",
+    details: "K–12 British-style education with strong extracurricular programs and small class sizes.",
   },
 ];
 

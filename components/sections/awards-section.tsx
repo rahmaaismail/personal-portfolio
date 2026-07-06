@@ -32,7 +32,7 @@ export default function AwardsSection() {
 
               <div className="flex-1">
                 {(award as { url?: string }).url ? (
-                  
+                  <a
                     href={(award as { url?: string }).url}
                     target="_blank"
                     rel="noopener noreferrer"

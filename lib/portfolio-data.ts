@@ -275,9 +275,10 @@ export const awards = [
   },
 
   {
-    title: "Student Employee Award Nominee",
+    title: "Fall 2025 Student Employee Award Nomination",
     event: "BC Public Service — Excellence in Professional Development",
     highlight: "December 2025",
+    description: "This nomination recognizes co-op employees in the BC Public Service who have demonstrated significant engagement with their work experience and have gone above and beyond to improve themselves personally and professionally.",
   },
 
   {

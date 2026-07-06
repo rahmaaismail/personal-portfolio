@@ -36,7 +36,7 @@ export default function AwardsSection() {
                     href={(award as { url?: string }).url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-foreground text-lg hover:text-primary hover:underline transition-colors"
+                    className="font-semibold text-foreground text-lg hover:text-primary underline decoration-dotted underline-offset-2 transition-colors"
                   >
                     {award.title}
                   </a>

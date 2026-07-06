@@ -266,17 +266,18 @@ export const organizations: Organization[] = [
 
 export const awards = [
   {
-    title: "UVic Annual Co-op Changemaker Award",
-    event: "University of Victoria Co-op Office",
-    highlight: "2026",
+    title: "2026 UVic Co-op Changemaker Award",
+    event: "University of Victoria Co-op and Career Services",
+    highlight: "June 2026",
     description:
-      "Awarded to co-op students who have made significant contributions to their workplace, community and/or to their own personal learning.",
+      "Awarded to co-op students who have made a meaningful contribution to the outcomes and goals of the organization or to their own personal or professional development while on a co-op work term.",
+    url: "https://www.uvic.ca/coop/student-spotlight/coop-stories-ecs/rahma-ismail-software-engineering.php",
   },
 
   {
     title: "Student Employee Award Nominee",
     event: "BC Public Service — Excellence in Professional Development",
-    highlight: "Fall 2025",
+    highlight: "December 2025",
   },
 
   {

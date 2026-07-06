@@ -31,7 +31,18 @@ export default function AwardsSection() {
               </motion.div>
 
               <div className="flex-1">
-                <h3 className="font-semibold text-foreground text-lg">{award.title}</h3>
+                {(award as { url?: string }).url ? (
+                  
+                    href={(award as { url?: string }).url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-foreground text-lg hover:text-primary hover:underline transition-colors"
+                  >
+                    {award.title}
+                  </a>
+                ) : (
+                  <h3 className="font-semibold text-foreground text-lg">{award.title}</h3>
+                )}
                 <p className="text-sm text-muted-foreground">{award.event}</p>
                 {award.highlight && (
                   <motion.p

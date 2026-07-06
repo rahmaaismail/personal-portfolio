@@ -39,6 +39,29 @@ export default function SkillsSection() {
         </div>
       </motion.div>
 
+      {/* Spoken Languages */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        <div className="flex items-center gap-2 mb-3">
+          <div className="p-2 rounded-lg bg-purple-500/10">
+            <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+          </div>
+          <h3 className="font-semibold text-foreground">Spoken Languages</h3>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {skills.languages_spoken.map((item) => (
+            <span key={item.lang} className="px-3 py-1.5 text-sm rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400">
+              {item.lang} <span className="opacity-60 text-xs">· {item.level}</span>
+            </span>
+          ))}
+        </div>
+      </motion.div>
+
       {/* Frameworks & Tools */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -131,26 +154,4 @@ export default function SkillsSection() {
       </motion.div>
     </div>
   );
-  {/* Spoken Languages */}
-  <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.4 }}
->
-  <div className="flex items-center gap-2 mb-3">
-    <div className="p-2 rounded-lg bg-purple-500/10">
-      <svg className="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-      </svg>
-    </div>
-    <h3 className="font-semibold text-foreground">Spoken Languages</h3>
-  </div>
-  <div className="flex flex-wrap gap-2">
-    {skills.languages_spoken.map((item) => (
-      <span key={item.lang} className="px-3 py-1.5 text-sm rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400">
-        {item.lang} <span className="opacity-60 text-xs">· {item.level}</span>
-      </span>
-    ))}
-  </div>
-</motion.div>
 }

@@ -85,9 +85,8 @@ export default function AwardsSection() {
         className="grid grid-cols-3 gap-4 pt-4"
       >
         {[
-          { value: "3+", label: "Hackathons Won" },
-          { value: "0.33%", label: "Top Percentile" },
-          { value: "400+", label: "Competitors Beat" },
+          { value: "5+", label: "Projects Shipped" },
+          { value: "1", label: "Meta OSS Contribution" },
         ].map((stat, i) => (
           <div
             key={i}

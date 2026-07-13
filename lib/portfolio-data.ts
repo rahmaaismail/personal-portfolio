@@ -3,7 +3,7 @@ export const personalInfo = {
   title:
     "Software Engineering Student @ UVic | Prev Security Analyst Co-op @ Gov of BC | Embedded Systems + AI",
   tagline:
-    "I build from firmware to full-stack — low-level systems, AI pipelines, and production-grade software.",
+    "I build from firmware to full-stack including low-level systems, AI pipelines, and production-grade software.",
   email: "rahma3a.ismail@gmail.com",
   github: "https://github.com/rahmaaismail",
   linkedin: "http://www.linkedin.com/in/rahmaismail16/",
@@ -268,16 +268,16 @@ export const awards = [
   {
     title: "2026 UVic Co-op Changemaker Award",
     event: "University of Victoria Co-op and Career Services",
-    highlight: "June 2026",
+    highlight: "Victoria, BC · June 2026",
     description:
       "Awarded to co-op students who have made a meaningful contribution to the outcomes and goals of the organization or to their own personal or professional development while on a co-op work term.",
     url: "https://www.uvic.ca/coop/student-spotlight/coop-stories-ecs/rahma-ismail-software-engineering.php",
   },
 
   {
-    title: "Fall 2025 Student Employee Award Nomination",
-    event: "BC Public Service — Excellence in Professional Development",
-    highlight: "December 2025",
+    title: "Fall 2025 Student Employee Award Nomination - Excellence in Professional Development",
+    event: "BC Public Service",
+    highlight: "Victoria, BC · December 2025",
     description: "This nomination recognizes co-op employees in the BC Public Service who have demonstrated significant engagement with their work experience and have gone above and beyond to improve themselves personally and professionally.",
   },
 
@@ -298,12 +298,12 @@ export const awards = [
   {
     title: "Honors Award",
     event: "American International School in Egypt",
-    highlight: "2020",
+    highlight: "Cairo, Egypt · 2020",
   },
   {
     title: "Perfect Attendance Award",
     event: "American International School in Egypt",
-    highlight: "2019",
+    highlight: "Cairo, Egypt · 2019",
   }, 
 ];
 
@@ -325,12 +325,12 @@ export const conferences: Conference[] = [
     date: "2026",
     location: "Calgary, AB",
     description:
-      "Presented at the Canadian Coalition of Women in Engineering, Science, Trades and Technology (CCWESTT) Biennial Conference, hosted in collaboration with Engineers Canada. Co-presented 'The WEST Effect: How Female-Only Clubs Benefit Women in STEM' — exploring how student-driven initiatives like UVic WEST build community, engage allies of all genders, and drive cultural change in STEM environments.",
+      "Presented at the Canadian Coalition of Women in Engineering, Science, Trades and Technology (CCWESTT) Biennial Conference, hosted in collaboration with Engineers Canada. Co-presented 'The WEST Effect: How Female-Only Clubs Benefit Women in STEM' — exploring how student-driven initiatives like UVic WEST build community, engage allies, and drive cultural change in STEM environments.",
     presented: true,
   },
   {
     id: "govinnovation",
-    name: "Government Innovation Showcase - Public Sector Network",
+    name: "Government Innovation Showcase British Columbia - Public Sector Network",
     role: "Attendee",
     date: "2025",
     location: "Victoria, BC",
@@ -351,15 +351,30 @@ export const conferences: Conference[] = [
 ];
 
 export const certifications = [
-  { name: "ISC2 Certified in Cybersecurity (CC)", issuer: "ISC2", year: "2025" },
-  { name: "Harvard CS50 Web Programming with Python & JavaScript", issuer: "Harvard / edX", year: "2025" },
-  { name: "NVIDIA DLI Generative AI Explained", issuer: "NVIDIA", year: "2025" },
-  { name: "IBM SkillsBuild Cloud Computing Fundamentals", issuer: "IBM", year: "2025" },
-  { name: "Microsoft Elevate AI Literacy", issuer: "Microsoft", year: "2025" },
-  { name: "Coursera Business Analysis & Process Management", issuer: "Coursera", year: "2025" },
-  { name: "Effective Prompt Engineering for Public Servants", issuer: "Apolitical", year: "2025" },
-  { name: "AI Fundamentals for Public Servants", issuer: "Apolitical", year: "2025" },
-];
+    { name: "ISC2 Certified in Cybersecurity (CC)", issuer: "ISC2", year: "2025" },
+    { name: "Harvard CS50 Web Programming with Python & JavaScript", issuer: "Harvard / edX", year: "2025" },
+    { name: "NVIDIA DLI Generative AI Explained", issuer: "NVIDIA", year: "2025" },
+    { name: "Navigating AI: AI Agents", issuer: "Institute of Public Administration of Canada (IPAC)", year: "2026" },
+    { name: "AI Fundamentals for Public Servants: Opportunities, Risks and Strategies", issuer: "Apolitical", year: "2025" },
+    { name: "Effective Prompt Engineering for Public Servants", issuer: "Apolitical", year: "2025" },
+    { name: "Microsoft Elevate AI Literacy", issuer: "Microsoft", year: "2025" },
+    { name: "IBM SkillsBuild Cloud Computing Fundamentals", issuer: "IBM", year: "2025" },
+    { name: "Splunk Certifications", issuer: "Splunk", year: "2025" },
+    { name: "Coursera Business Analysis & Process Management", issuer: "Coursera", year: "2025" },
+    { name: "Government Innovation Showcase British Columbia", issuer: "Public Sector Network", year: "2025" },
+    { name: "Tri-Council Policy Statement: Ethical Conduct for Research Involving Humans (TCPS 2: CORE 2022)", issuer: "Government of Canada", year: "2025" },
+    { name: "Freedom of Information and Protection of Privacy Act (FOIPPA) Foundations", issuer: "Government of British Columbia", year: "2025" },
+    { name: "RM 100: Risk Management - Everyone is a Risk Manager", issuer: "Government of British Columbia", year: "2025" },
+    { name: "PM 100: Project Foundations", issuer: "Government of British Columbia", year: "2025" },
+    { name: "IM 118: Information Security and Awareness", issuer: "Government of British Columbia", year: "2025" },
+    { name: "IM 117: Information Management", issuer: "Government of British Columbia", year: "2025" },
+    { name: "Intro to Change Leadership", issuer: "Government of British Columbia", year: "2025" },
+    { name: "Intro to Effective Communication", issuer: "Government of British Columbia", year: "2025" },
+    { name: "Intro to Conflict Competence", issuer: "Government of British Columbia", year: "2025" },
+    { name: "American High School Diploma", issuer: "Esol Education", year: "2022" },
+    { name: "Full Diploma Candidate (IB)", issuer: "International Baccalaureate", year: "2022" },
+    { name: "Egyptian General Secondary Certificate", issuer: "Egyptian Ministry of Education", year: "2022" },
+  ];
 
 export const skills = {
   languages: ["C", "C++", "Python", "Go", "Rust", "JavaScript", "TypeScript", "Java", "SQL", "Shell/Bash", "R", "MATLAB"],

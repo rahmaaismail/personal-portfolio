@@ -46,7 +46,7 @@ const educationData = [
     period: "Sep 2014 – Jun 2022",
     location: "Cairo, Egypt",
     details: "IB HL: Physics, Chemistry, Global Politics. SL: English, Spanish B, Math AA.",
-    activities: "High School Student Council VP, IB Spanish AB Tutor, NJHS, Swim Team, World Scholar's Cup (Cairo Round 2018), School Newspaper, Middle School Student Council",
+    activities: "High School Student Council Vice President, IB Spanish AB Tutor, Baked Goods Distribution, Return the Favor Club, AIS4EGYPT, National Junior Honor Society, Swim Team, World Scholar's Cup (Cairo Round 2018), School Newspaper, Middle School Student Council",
   },
   {
     id: "webber",

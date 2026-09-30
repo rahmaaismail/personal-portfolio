@@ -27,6 +27,16 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "uvic-research",
+    company: "University of Victoria",
+    role: "Undergraduate Research Assistant, Software Safety Assurance",
+    period: "Sep 2026 – Present",
+    location: "Victoria, BC",
+    description:
+      "Developing Python-based UAV control policies for multi-drone reconnaissance in the Wildfire-UAVSim self-adaptive systems testbed, enforcing minimum separation and collision-avoidance constraints. Building dynamic assurance cases in the Socrates editor, using Eliminative Argumentation and GSN to link safety claims, defeaters, and evidence (unit tests, simulation runs) to system requirements. Researching dynamic and perpetual assurance methods for self-adaptive systems, including LLM-supported defeater generation, to scope a case study on autonomous UAV navigation safety.",
+    skills: ["Python", "Assurance Cases", "GSN", "Eliminative Argumentation", "Simulation", "Unit Testing"],
+  },
+  {
     id: "govbc",
     company: "Government of British Columbia – Ministry of Citizens' Services",
     role: "Security Analyst Co-op",

@@ -29,7 +29,7 @@ export const experiences: Experience[] = [
   {
     id: "uvic-research",
     company: "University of Victoria",
-    role: "Undergraduate Research Assistant, Software Safety Assurance",
+    role: "Undergraduate Research Assistant",
     period: "Sep 2026 – Present",
     location: "Victoria, BC",
     description:

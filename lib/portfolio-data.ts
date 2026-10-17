@@ -33,7 +33,7 @@ export const experiences: Experience[] = [
     period: "Sep 2026 – Present",
     location: "Victoria, BC",
     description:
-      "Developing Python-based UAV control policies for multi-drone reconnaissance in the Wildfire-UAVSim self-adaptive systems testbed, enforcing minimum separation and collision-avoidance constraints. Building dynamic assurance cases in the Socrates editor, using Eliminative Argumentation and GSN to link safety claims, defeaters, and evidence (unit tests, simulation runs) to system requirements. Researching dynamic and perpetual assurance methods for self-adaptive systems, including LLM-supported defeater generation, to scope a case study on autonomous UAV navigation safety.",
+      "Developing runtime safety policies in Python for a multi-drone wildfire simulator, enforcing drone separation and collision avoidance, verified through unit tests and simulation. Building dynamic assurance cases and tracing safety requirements to simulation evidence, while developing a foundation in self-adaptive systems theory.",
     skills: ["Python", "Assurance Cases", "GSN", "Eliminative Argumentation", "Simulation", "Unit Testing"],
   },
   {
@@ -209,6 +209,15 @@ export interface Organization {
 }
 
 export const organizations: Organization[] = [
+    {
+    id: "seng-ambassador",
+    name: "UVic Software Engineering Program",
+    role: "Student Ambassador",
+    period: "Oct 2026 – Present",
+    description:
+      "Partner with faculty to shape programming that supports software engineering students' career readiness and community.",
+    highlights: ["Faculty Partnership", "Career Readiness", "Student Community", "Program Development"],
+  },
   {
     id: "west",
     name: "UVic Women in Engineering, Science & Technology",
